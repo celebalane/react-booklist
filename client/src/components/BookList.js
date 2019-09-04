@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
+import {flowRight as compose} from 'lodash';
 
-import { getBooksQuery } from '../queries/queries';
+import { getBooksQuery, deleteBookMutation } from '../queries/queries';
 
 import BookDetails from './BookDetails'
+import DeleteBook from './DeleteBook'
+
 
 class BookList extends Component {
 
@@ -11,7 +14,7 @@ class BookList extends Component {
 		super(props);
 		this.state = {
 			selected: null
-		}
+		} 
 	}
 
 	displayBooks(){
@@ -21,11 +24,16 @@ class BookList extends Component {
 		} else {
 			return data.books.map(book => { //map permet d'avoir chacun des éléments du tableau
 				return(
-					<li key={ book.id } onClick={ (e) => { this.setState({ selected: book.id })}}>{ book.name }</li>
+					<div key={ book.id }>
+						<li  onClick={ (e) => { this.setState({ selected: book.id })}}>{ book.name } </li> 
+						<DeleteBook bookId={ book.id } />
+					</div>
 				)
 			})
-		}
+		} 
 	}
+
+
 
 	render() {
 		return (
