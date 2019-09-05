@@ -4,6 +4,8 @@ import {flowRight as compose} from 'lodash';
 
 import { getAuthorsQuery, addBookMutation, getBooksQuery } from '../queries/queries';
 
+import Typography from '@material-ui/core/Typography';
+
 class AddBook extends Component {
 
 	constructor(props){
@@ -41,6 +43,7 @@ class AddBook extends Component {
 	render() {
 		return (
 		    <form id="add-book" onSubmit={ this.submitForm.bind(this) }>
+		    	<Typography variant="h4" color="primary" gutterBottom>Ajouter un livre</Typography>
 		    	<div className="field">
 		    		<label>Titre:</label>
 		    		<input type="text" onChange={ (e) => this.setState({ name: e.target.value })} />

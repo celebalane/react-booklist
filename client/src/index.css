@@ -1,9 +1,21 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: "Roboto", sans-serif,
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #EBEAEA;
+  padding: 20px
 }
+
+.paper { margin-bottom: 20px; }
+
+.titre-h1 { padding-bottom: 20px; }
+#infos-titre { padding: 10px; margin: 0; background-color: #0097a7; border-radius: 4px 4px 0 0; color: #fff; overflow: hidden; }
+
+.MuiSvgIcon-colorSecondary:hover,
+.MuiButtonBase-root .MuiIconButton-root:hover .MuiSvgIcon-colorSecondary { color: #fff; }
+.MuiButtonBase-root .MuiIconButton-root:hover { background-color: #0097a7; }
+
+#book-details { padding: 10px; }
 
